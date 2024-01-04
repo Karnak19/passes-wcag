@@ -1,20 +1,65 @@
 {
-  "name": "passes-wcag",
+  "name": "@karnak19/passes-wcag",
   "version": "0.2.1",
   "description": "Evaluate if a to colors have sufficient contrast to pass WCAG requirements.",
-  "main": "build/index.js",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    ".": {
+      "import": {
+        "default": "./dist/index.mjs",
+        "types": "./dist/index.d.mts"
+      },
+      "require": {
+        "default": "./dist/index.js",
+        "types": "./dist/index.d.ts"
+      }
+    },
+    "./wcag": {
+      "import": {
+        "default": "./dist/wcag.mjs",
+        "types": "./dist/wcag.d.mts"
+      },
+      "require": {
+        "default": "./dist/wcag.js",
+        "types": "./dist/wcag.d.ts"
+      }
+    },
+    "./get-relative-luminance": {
+      "import": {
+        "default": "./dist/get-relative-luminance.mjs",
+        "types": "./dist/get-relative-luminance.d.mts"
+      },
+      "require": {
+        "default": "./dist/get-relative-luminance.js",
+        "types": "./dist/get-relative-luminance.d.ts"
+      }
+    },
+    "./get-contrast-ratio": {
+      "import": {
+        "default": "./dist/get-contrast-ratio.mjs",
+        "types": "./dist/get-contrast-ratio.d.mts"
+      },
+      "require": {
+        "default": "./dist/get-contrast-ratio.js",
+        "types": "./dist/get-contrast-ratio.d.ts"
+      }
+    }
+  },
   "scripts": {
-    "build": "babel src -d build",
+    "build": "rm -rf dist/ && tsup src/*.ts --format esm,cjs --dts --minify",
     "lint": "eslint --max-warnings=0 src",
-    "mocha": "mocha --require @babel/register",
     "prepublish": "yarn build && yarn test",
     "postpublish": "git push --tags",
-    "release": "np",
-    "test": "yarn lint && yarn mocha"
+    "release": "np --no-cleanup",
+    "test": "vitest"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/misund/passes-wcag.git"
+    "url": "git+https://github.com/Karnak19/passes-wcag.git"
   },
   "keywords": [
     "wcag",
@@ -28,26 +73,20 @@
     "color-contrast",
     "text-legibility"
   ],
-  "author": "Just Thomas Hiorth Misund",
+  "author": "Basile Vernouillet",
   "license": "GPL-3.0",
   "bugs": {
-    "url": "https://github.com/misund/passes-wcag/issues"
+    "url": "https://github.com/Karnak19/passes-wcag/issues"
   },
-  "homepage": "https://github.com/misund/passes-wcag#readme",
+  "homepage": "https://github.com/Karnak19/passes-wcag#readme",
   "devDependencies": {
-    "@babel/cli": "7.10.1",
-    "@babel/core": "7.10.2",
-    "@babel/preset-env": "7.10.2",
-    "@babel/register": "7.10.1",
-    "eslint": "6.8.0",
-    "eslint-config-airbnb": "17.1.1",
-    "eslint-plugin-import": "2.21.1",
-    "eslint-plugin-jsx-a11y": "6.2.3",
-    "eslint-plugin-react": "7.20.0",
-    "mocha": "6.2.2",
-    "np": "5.2.1"
+    "@types/parse-color": "^1.0.3",
+    "np": "^9.2.0",
+    "tsup": "^8.0.1",
+    "typescript": "^5.3.3",
+    "vitest": "^1.1.1"
   },
   "dependencies": {
-    "get-contrast-ratio": "0.2.1"
+    "parse-color": "^1.0.0"
   }
 }

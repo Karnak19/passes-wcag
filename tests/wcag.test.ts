@@ -1,11 +1,7 @@
 /* global describe, it */
-import assert from 'assert';
+import { describe, it, assert } from 'vitest';
 
-import {
-  passesWcagAaLargeText,
-  passesWcagAa,
-  passesWcagAaa,
-} from '..';
+import { passesWcagAaLargeText, passesWcagAa, passesWcagAaa } from '../src/wcag';
 
 describe('passes-wcag', () => {
   describe('passesWcagAaLargeText', () => {

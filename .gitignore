@@ -38,6 +38,7 @@ jspm_packages
 
 # Build
 build/
+dist/
 
 # Lockfiles
 package-lock.json

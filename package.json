@@ -9,16 +9,6 @@
     "dist"
   ],
   "exports": {
-    ".": {
-      "import": {
-        "default": "./dist/index.mjs",
-        "types": "./dist/index.d.mts"
-      },
-      "require": {
-        "default": "./dist/index.js",
-        "types": "./dist/index.d.ts"
-      }
-    },
     "./wcag": {
       "import": {
         "default": "./dist/wcag.mjs",
@@ -47,6 +37,16 @@
       "require": {
         "default": "./dist/get-contrast-ratio.js",
         "types": "./dist/get-contrast-ratio.d.ts"
+      }
+    },
+    ".": {
+      "import": {
+        "default": "./dist/index.mjs",
+        "types": "./dist/index.d.mts"
+      },
+      "require": {
+        "default": "./dist/index.js",
+        "types": "./dist/index.d.ts"
       }
     }
   },

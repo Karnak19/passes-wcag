@@ -8,50 +8,8 @@
   "files": [
     "dist"
   ],
-  "exports": {
-    "./wcag": {
-      "import": {
-        "default": "./dist/wcag.mjs",
-        "types": "./dist/wcag.d.mts"
-      },
-      "require": {
-        "default": "./dist/wcag.js",
-        "types": "./dist/wcag.d.ts"
-      }
-    },
-    "./get-relative-luminance": {
-      "import": {
-        "default": "./dist/get-relative-luminance.mjs",
-        "types": "./dist/get-relative-luminance.d.mts"
-      },
-      "require": {
-        "default": "./dist/get-relative-luminance.js",
-        "types": "./dist/get-relative-luminance.d.ts"
-      }
-    },
-    "./get-contrast-ratio": {
-      "import": {
-        "default": "./dist/get-contrast-ratio.mjs",
-        "types": "./dist/get-contrast-ratio.d.mts"
-      },
-      "require": {
-        "default": "./dist/get-contrast-ratio.js",
-        "types": "./dist/get-contrast-ratio.d.ts"
-      }
-    },
-    ".": {
-      "import": {
-        "default": "./dist/index.mjs",
-        "types": "./dist/index.d.mts"
-      },
-      "require": {
-        "default": "./dist/index.js",
-        "types": "./dist/index.d.ts"
-      }
-    }
-  },
   "scripts": {
-    "build": "rm -rf dist/ && tsup src/*.ts --format esm,cjs --dts --minify",
+    "build": "rm -rf dist/ && tsup src/index.ts --format esm,cjs --dts --minify",
     "lint": "eslint --max-warnings=0 src",
     "prepublish": "yarn build && yarn test",
     "postpublish": "git push --tags",

@@ -1,6 +1,6 @@
 {
   "name": "@karnak19/passes-wcag",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Evaluate if a to colors have sufficient contrast to pass WCAG requirements.",
   "main": "dist/index.js",
   "module": "dist/index.mjs",

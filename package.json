@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Evaluate if a to colors have sufficient contrast to pass WCAG requirements.",
   "main": "dist/index.js",
+  "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
   "files": [
     "dist"
